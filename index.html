@@ -1,50 +1,48 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Reading Room</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Room</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<h1>Reading Room</h1>
+    <header>
+        <h1>Reading Room</h1>
+        <div class="video-control">
+            <input type="text" id="youtubeURL" placeholder="Paste YouTube URL">
+            <button onclick="setVideo()">Set Video</button>
+        </div>
+    </header>
 
-<div class="video-control">
-<input type="text" id="youtubeURL" placeholder="Paste YouTube URL">
-<button onclick="setVideo()">Set Video</button>
-</div>
+    <main class="container">
+        <section class="video-wrapper">
+            <iframe
+                id="lofiPlayer"
+                src=""
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+        </section>
 
-<div class="container">
+        <aside class="timer-panel">
+            <div class="timer-card">
+                <h2>Reading Timer</h2>
+                <div id="timer">00:00:00</div>
+                <div class="controls">
+                    <button class="start-btn" onclick="startTimer()">Start</button>
+                    <button class="stop-btn" onclick="stopTimer()">Stop</button>
+                </div>
+            </div>
 
-<div class="video">
-<iframe
-id="lofiPlayer"
-width="100%"
-height="315"
-src=""
-frameborder="0"
-allowfullscreen>
-</iframe>
-</div>
+            <div class="sessions-card">
+                <h3>Sessions</h3>
+                <ul id="sessionList"></ul>
+            </div>
+        </aside>
+    </main>
 
-<div class="timer-panel">
-
-<h2>Reading Timer</h2>
-
-<div id="timer">00:00:00</div>
-
-<button onclick="startTimer()">Start</button> <button onclick="stopTimer()">Stop</button>
-
-<h3>Sessions</h3>
-<ul id="sessionList"></ul>
-
-</div>
-
-</div>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
